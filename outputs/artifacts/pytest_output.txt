@@ -1,0 +1,51 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\vijayasai.sekar\Desktop\LandsEnd\ClaudeCode\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\vijayasai.sekar\Desktop\LandsEnd\ClaudeCode\churn-feature-pipeline
+configfile: pytest.ini
+collecting ... collected 42 items
+
+tests/test_feature_store.py::test_register_and_retrieve_all_versions_of_a_versioned_feature PASSED [  2%]
+tests/test_feature_store.py::test_is_latest_points_to_highest_version_not_an_earlier_one PASSED [  4%]
+tests/test_feature_store.py::test_list_versions_returns_distinct_parquet_paths_that_exist PASSED [  7%]
+tests/test_feature_store.py::test_duplicate_parameters_are_refused_not_overwritten PASSED [  9%]
+tests/test_feature_store.py::test_earlier_snapshot_is_not_modified_by_a_new_version PASSED [ 11%]
+tests/test_feature_store.py::test_each_feature_has_its_own_latest_flag PASSED [ 14%]
+tests/test_feature_store.py::test_missing_version_raises_key_error PASSED [ 16%]
+tests/test_feature_store.py::test_training_build_refuses_a_different_as_of_for_already_registered_versions PASSED [ 19%]
+tests/test_feature_store.py::test_real_registry_has_every_spec_versioned_feature_fully_registered PASSED [ 21%]
+tests/test_parity.py::test_training_and_scoring_paths_agree_for_same_customer PASSED [ 23%]
+tests/test_parity.py::test_batch_scoring_matches_training_for_the_same_customers PASSED [ 26%]
+tests/test_parity.py::test_scoring_returns_exactly_the_requested_customers PASSED [ 28%]
+tests/test_quality_checks.py::test_clean_build_passes_every_check PASSED [ 30%]
+tests/test_quality_checks.py::test_injected_null_fires_null_check PASSED [ 33%]
+tests/test_quality_checks.py::test_zero_activity_row_with_nan_default_fires_zero_activity_check PASSED [ 35%]
+tests/test_quality_checks.py::test_zero_activity_row_with_nonzero_spend_fires_zero_activity_check PASSED [ 38%]
+tests/test_quality_checks.py::test_out_of_range_amount_fires_range_check PASSED [ 40%]
+tests/test_quality_checks.py::test_return_rate_above_one_fires_range_check PASSED [ 42%]
+tests/test_quality_checks.py::test_dropped_customer_fires_row_count_check PASSED [ 45%]
+tests/test_quality_checks.py::test_duplicated_customer_fires_row_count_check PASSED [ 47%]
+tests/test_quality_checks.py::test_txn_count_off_by_one_window_fires_reconciliation_check PASSED [ 50%]
+tests/test_quality_checks.py::test_shifted_distribution_fires_drift_check PASSED [ 52%]
+tests/test_quality_checks.py::test_identical_distribution_passes_drift_check PASSED [ 54%]
+tests/test_quality_checks.py::test_drift_without_reference_is_reported_as_skipped_not_passed PASSED [ 57%]
+tests/test_quality_checks.py::test_enforce_raises_when_any_check_fails PASSED [ 59%]
+tests/test_transforms.py::test_history_cutoff_is_91_days_before_as_of PASSED [ 61%]
+tests/test_transforms.py::test_txn_count_zero_activity_gets_explicit_zero_not_nan PASSED [ 64%]
+tests/test_transforms.py::test_txn_count_single_record_inside_window_counts_one PASSED [ 66%]
+tests/test_transforms.py::test_txn_count_excludes_label_window_and_starts_exactly_at_cutoff PASSED [ 69%]
+tests/test_transforms.py::test_txn_count_window_start_is_inclusive_and_exact PASSED [ 71%]
+tests/test_transforms.py::test_longer_window_counts_at_least_as_many_transactions PASSED [ 73%]
+tests/test_transforms.py::test_spend_caps_each_transaction_at_cap_amount PASSED [ 76%]
+tests/test_transforms.py::test_spend_zero_activity_default_is_zero_float PASSED [ 78%]
+tests/test_transforms.py::test_spend_excludes_label_window_amounts PASSED [ 80%]
+tests/test_transforms.py::test_return_rate_zero_activity_is_zero_not_nan PASSED [ 83%]
+tests/test_transforms.py::test_return_rate_single_returned_record_is_one PASSED [ 85%]
+tests/test_transforms.py::test_return_rate_mixed_records PASSED          [ 88%]
+tests/test_transforms.py::test_active_months_counts_full_months_in_12_month_window PASSED [ 90%]
+tests/test_transforms.py::test_active_months_ignores_months_that_overlap_or_follow_the_label_window PASSED [ 92%]
+tests/test_transforms.py::test_active_months_zero_activity_gets_explicit_zero PASSED [ 95%]
+tests/test_transforms.py::test_tenure_days_is_days_from_signup_to_as_of PASSED [ 97%]
+tests/test_transforms.py::test_label_window_transactions_do_not_change_any_feature PASSED [100%]
+
+============================= 42 passed in 7.49s ==============================
