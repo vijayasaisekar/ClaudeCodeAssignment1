@@ -1,0 +1,12 @@
+﻿           feature_name  version  is_latest            parameters                                             parquet_path
+active_months_prior_12m        1          1                    {} feature_store/values/active_months_prior_12m__v1.parquet
+ return_rate_prior_180d        1          1                    {}  feature_store/values/return_rate_prior_180d__v1.parquet
+ spend_prior_winsorized        1          0 {"cap_amount": 250.0}  feature_store/values/spend_prior_winsorized__v1.parquet
+ spend_prior_winsorized        2          1 {"cap_amount": 500.0}  feature_store/values/spend_prior_winsorized__v2.parquet
+            tenure_days        1          1                    {}             feature_store/values/tenure_days__v1.parquet
+        txn_count_prior        1          0   {"window_days": 90}         feature_store/values/txn_count_prior__v1.parquet
+        txn_count_prior        2          0  {"window_days": 180}         feature_store/values/txn_count_prior__v2.parquet
+        txn_count_prior        3          1  {"window_days": 365}         feature_store/values/txn_count_prior__v3.parquet
+
+parquet exists: {'feature_store/values/active_months_prior_12m__v1.parquet': True, 'feature_store/values/return_rate_prior_180d__v1.parquet': True, 'feature_store/values/spend_prior_winsorized__v1.parquet': True, 'feature_store/values/spend_prior_winsorized__v2.parquet': True, 'feature_store/values/tenure_days__v1.parquet': True, 'feature_store/values/txn_count_prior__v1.parquet': True, 'feature_store/values/txn_count_prior__v2.parquet': True, 'feature_store/values/txn_count_prior__v3.parquet': True}
+is_latest per feature: {'active_months_prior_12m': 1, 'return_rate_prior_180d': 1, 'spend_prior_winsorized': 1, 'tenure_days': 1, 'txn_count_prior': 1}

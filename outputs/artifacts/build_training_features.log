@@ -1,0 +1,17 @@
+﻿Built training features: 1500 customers as of 2026-08-01, 5 features
+Quality-check summary:
+  [PASS] no_unexpected_nulls: checked 5 non-nullable features
+  [PASS] zero_activity_defaults_applied: 333 zero-activity customers checked
+  [PASS] ranges_within_bounds: checked 5 bounded features
+  [PASS] row_count_matches_population: rows=1500 expected=1500
+  [PASS] txn_count_reconciles_to_source: raw_rows=7008 feature_sum=7008 window_days=365
+  [SKIPPED] drift_vs_reference: no reference snapshot supplied; drift not evaluated
+All quality checks passed. Registering features.
+  registered v1: txn_count_prior params={'window_days': 90}
+  registered v2: txn_count_prior params={'window_days': 180}
+  registered v3: txn_count_prior params={'window_days': 365}
+  registered v1: spend_prior_winsorized params={'cap_amount': 250.0}
+  registered v2: spend_prior_winsorized params={'cap_amount': 500.0}
+  registered v1: return_rate_prior_180d params={}
+  registered v1: active_months_prior_12m params={}
+  registered v1: tenure_days params={}

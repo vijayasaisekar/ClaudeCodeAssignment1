@@ -1,0 +1,7 @@
+﻿[PASS] no_unexpected_nulls: checked 5 non-nullable features
+[PASS] zero_activity_defaults_applied: 333 zero-activity customers checked
+[PASS] ranges_within_bounds: checked 5 bounded features
+[PASS] row_count_matches_population: rows=1500 expected=1500
+[PASS] txn_count_reconciles_to_source: raw_rows=7008 feature_sum=7008 window_days=365
+[SKIPPED] drift_vs_reference: no reference snapshot supplied; drift not evaluated
+ALL CHECKS PASSED

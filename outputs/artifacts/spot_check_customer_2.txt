@@ -1,0 +1,11 @@
+﻿MANUAL (raw SQL): {'txn_count_prior(365)': 10, 'txn_count_prior(90 v1)': 0, 'txn_count_prior(180 v2)': 4, 'spend_prior_winsorized(cap500 latest)': 127.67, 'spend_prior_winsorized(cap250 v1)': 127.67, 'return_rate_prior_180d': 0.0, 'active_months_prior_12m': 7, 'tenure_days': 703}
+registry txn_count_prior latest(v3) = 10 | manual 10
+registry v1 = 0 | manual 90d 0
+registry v2 = 4 | manual 180d 4
+registry spend latest(v2) = 127.67 | manual 127.67
+registry spend v1 = 127.67 | manual 127.67
+registry active_months = 7 | manual 7
+registry return_rate = 0.0 | manual 0.0
+registry tenure = 703 | manual 703
+ customer_id as_of_date  txn_count_prior  spend_prior_winsorized  return_rate_prior_180d  active_months_prior_12m  tenure_days
+           2 2026-08-01               10                  127.67                     0.0                        7          703
